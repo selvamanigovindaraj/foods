@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <div class="bg-white">
+            <div class="container d-none d-md-block">
+                <div class="row header1 my-2">
+                    <div class="mr-auto">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <b>Working Hours:</b>Monday-Sunday-11:00-22:00
+                    </div>
+                    <div class="ml-auto">
+                        <i class="fa fa-envelope pr-1" aria-hidden="true"></i>
+                        info@foodworld.com
+                        <i class="fa fa-phone ml-2 pr-1" aria-hidden="true"></i>
+                        +91-442532546
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-nav justify-content-between">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo03"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand " href="#">
+                <img src="images/hotel.png" class="menuImg"> OnlineFoodWorld
+            </a>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a href="index.html">
+                            <button class="btn btn-menu my-2 my-sm-0 ml-auto mr-1" type="submit">Home</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="payment.html">
+                            <button class="btn btn-menu my-2 my-sm-0 mr-1" type="submit">Payment</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="inventory.html">
+                            <button class="btn btn-menu my-2 my-sm-0 mr-1" type="submit">Inventory</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="container jumbotron">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-group">
+                    <select class="form-control" onchange="findFood()"></select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="number" class="form-control" id="quantity" placeholder="Quantity in Kg\Litre">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-menu w-75" onclick="createInvoice()">Add</button>
+            </div>
+        </div>
+        <div class="foodList">
+            <table class="table">
+                <thead>
+                    <th>S.no</th>
+                    <th>Food Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                </thead>
+                <tbody>
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">GrandTotal</td>
+                        <td id="grandTotal"></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"> For Home Delivery
+                </label>
+            </div>
+            <div class="form-group addressArea">
+                <label>Address</label>
+                <textarea class="form-control" id="address" rows="3"></textarea>
+                <button type="submit" class="btn btn-menu w-25 mt-2" onclick="goToPayment()">Pay</button>
+            </div>
+        </div>
+    </section>
+    <footer class="container-fluid py-2">
+        <div class="row">
+            <div class="col d-none d-md-block">
+                <img src="images/hotel.png" class="footerImg">
+            </div>
+            <div class="col d-none d-md-block">
+                <h4>Links</h4>
+                <hr>
+                <ul>
+                    <li>Home</li>
+                    <li>Payment</li>
+                    <li>Sign Up</li>
+                </ul>
+            </div>
+            <div class="col d-none d-md-block">
+                <h4>Other Links</h4>
+                <hr>
+                <ul>
+                    <li>Privacy Policy</li>
+                    <li>Support</li>
+                    <li>FAQs</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>Subscribe for Newsletter</h4>
+                <hr>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="name" class="form-control" placeholder="Enter email">
+                    </div>
+                    <button type="submit" class="btn btn-menu">Submit</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row copyRightFooter">
+            <div class="col-md-6">
+                <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+            </div>
+            <div class="col-md-6">
+                <span class="copyRights">
+                    <i class="fa fa-copyright ml-auto" aria-hidden="true"></i>
+                    FoodWorld.io
+                </span>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

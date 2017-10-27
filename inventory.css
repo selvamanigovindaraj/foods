@@ -1,0 +1,57 @@
+.bg-nav{
+    background-color: #112e51;
+}
+.btn-menu{
+    color: white;
+    background-color:#e31c3d;
+}
+.menuImg{
+    width:50px;
+    height: 50px;
+}
+.jumbotron{
+    background-color: #dce4ef;
+    min-height: 80vh;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.footerImg{
+    width:150px;
+    height:150px;
+}
+footer{
+    background-color: #112e51;
+    color:white
+}
+hr{
+    border-top: 1px solid white
+}
+footer ul{
+    list-style: none;
+    padding-left: 5px;
+}
+footer ul li{
+    padding: 5px 0px;
+}
+
+@media(min-width:768px){
+    .copyRights{
+        float: right;
+        font-size: 1.25rem;
+        font-style: italic;
+    }
+}
+@media (max-width:767px) {
+    .copyRightFooter{
+        text-align: center;
+    }
+}
+@media (max-width:767px){
+    .table{
+        overflow-x:scroll; 
+        width: 100%;
+        display:block;
+
+    }
+}
